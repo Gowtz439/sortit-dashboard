@@ -1,14 +1,17 @@
 /* src/components/Logs/ReflectionLog.css */
 .bento-box.reflection-log {
-    /* Specific grid properties for Bento layout */
-    grid-column: span 2; /* Spans 2 columns */
-    /* grid-row: span 1; */ /* Let it auto-flow or set explicitly */
+    /* Spans 2 columns on the bottom row */
+    grid-column: 1 / span 2; 
+    grid-row: 3 / span 1; /* Fixed to the bottom content row */
+    overflow: hidden; /* Ensures no log scroll unless absolutely necessary */
+    
+    /* Ensure list items fit cleanly */
+    padding-bottom: 5px;
 }
 
 .log-list {
     flex-grow: 1;
-    overflow-y: auto;
-    max-height: 250px; /* Adjust max height if needed */
+    overflow-y: hidden; /* HIDDEN SCROLL: Prioritizes fitting content */
     padding-right: 5px;
 }
 /* Custom scrollbar for dark theme */

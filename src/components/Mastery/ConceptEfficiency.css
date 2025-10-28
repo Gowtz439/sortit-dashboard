@@ -69,3 +69,32 @@
 .legend .status-medium::before { color: var(--heatmap-medium); }
 .legend .status-low::before { color: var(--heatmap-low); }
 .legend .status-critical::before { color: var(--heatmap-critical); }
+.bento-box.efficiency-heatmap {
+    /* Spans 2 columns on the top row */
+    grid-column: span 2; 
+    grid-row: 2 / span 1; /* Fixes it to the second row (top content) */
+}
+
+.heatmap-grid {
+    display: grid;
+    /* Increase columns to 5 or 6 for a wide, short look, or keep 4 and reduce padding */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 8px; 
+    flex-grow: 1;
+}
+
+.heatmap-cell {
+    padding: 8px; /* Reduced padding */
+    /* ... other styles remain the same ... */
+}
+
+.alg-score { 
+    font-size: 1.2em; /* Reduced font size */
+    margin-top: 5px;
+}
+.alg-name { 
+    font-size: 0.75em; /* Reduced font size */
+    opacity: 0.9;
+    line-height: 1.2;
+}
+/* ... rest of the CSS remains the same ... */

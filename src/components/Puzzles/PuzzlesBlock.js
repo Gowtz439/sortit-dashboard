@@ -1,10 +1,9 @@
-// src/components/Puzzles/PuzzlesBlock.js
 import React from 'react';
 import './PuzzlesBlock.css';
 
 function PuzzlesBlock() {
   return (
-    <div className="bento-box puzzles-block"> {/* Applied bento-box class */}
+    <div className="bento-box puzzles-block"> 
       <h2 className="box-title">Puzzles & Challenges</h2>
       <div className="puzzle-item archeologist-puzzle">
         <span className="puzzle-title">Algorithm Archeologist</span>

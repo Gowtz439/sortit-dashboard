@@ -1,4 +1,3 @@
-// src/components/Mastery/ConceptEfficiency.js
 import React from 'react';
 import './ConceptEfficiency.css';
 
@@ -11,12 +10,11 @@ const algorithms = [
   { name: 'Heap Sort', ces: 88, status: 'high' },
   { name: 'Radix Sort', ces: 95, status: 'high' },
   { name: 'Counting Sort', ces: 70, status: 'medium' },
-  // ... add more algorithms to fill the grid ...
 ];
 
 function ConceptEfficiency() {
   return (
-    <div className="bento-box efficiency-heatmap"> {/* Applied bento-box class */}
+    <div className="bento-box efficiency-heatmap"> 
       <h2 className="box-title">Concept Efficiency Heatmap</h2>
       <div className="heatmap-grid">
         {algorithms.map((alg) => (
