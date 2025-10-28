@@ -1,0 +1,46 @@
+/* src/components/DashboardLayout.css */
+.dashboard-container {
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+  /* Defining a 3-column, flexible grid for the main content areas */
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: minmax(180px, auto); 
+}
+
+/* Specific grid-area assignments for Bento boxes to create an asymmetric look */
+/* These will be applied to the components directly using custom classes */
+
+/* Example of how you'd target components directly for Bento layout */
+.bento-box.basic-status {
+    grid-column: 1 / -1; /* Spans full width for the top bar */
+    height: 120px; /* Fixed height for top bar */
+    display: flex; /* Ensure content is flexed */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space out content horizontally */
+}
+
+.bento-box.efficiency-heatmap {
+    grid-column: span 2; /* Heatmap spans 2 columns */
+    grid-row: span 2; /* Heatmap spans 2 rows */
+}
+
+.bento-box.puzzles-block {
+    /* Auto placed or specified */
+    /* grid-column: span 1; */
+    /* grid-row: span 1; */
+}
+
+.bento-box.reflection-log {
+    /* Fills remaining space */
+    /* grid-column: span 1; */
+    /* grid-row: span 1; */
+}
+
+/* These specific grid properties will need to be added to the component's JSX itself */
+/* e.g., <BasicStatus className="bento-box basic-status" /> */

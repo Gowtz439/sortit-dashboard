@@ -1,0 +1,71 @@
+/* src/components/Mastery/ConceptEfficiency.css */
+.bento-box.efficiency-heatmap {
+    /* Specific grid properties for Bento layout */
+    grid-column: span 2; /* Heatmap spans 2 columns */
+    grid-row: span 2; /* Heatmap spans 2 rows */
+}
+
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns as per image */
+    gap: 8px;
+    flex-grow: 1;
+}
+
+.heatmap-cell {
+    padding: 10px;
+    border-radius: 6px; /* Slightly more rounded */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+.heatmap-cell:hover {
+    transform: translateY(-3px) scale(1.03); /* More pronounced lift/scale */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Heatmap Color Grading based on CES using dark theme vars */
+.status-high { background-color: var(--heatmap-high); }
+.status-medium { background-color: var(--heatmap-medium); color: #333; }
+.status-low { background-color: var(--heatmap-low); }
+.status-critical { background-color: var(--heatmap-critical); }
+
+.alg-score { 
+    font-size: 1.3em;
+    margin-top: 5px;
+}
+.alg-name { 
+    font-size: 0.8em;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-bento-border);
+    flex-wrap: wrap; /* Allow legend items to wrap */
+}
+.legend span {
+    margin: 0 10px;
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+}
+.legend span::before {
+    content: "•";
+    font-size: 1.5em;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.legend .status-high::before { color: var(--heatmap-high); }
+.legend .status-medium::before { color: var(--heatmap-medium); }
+.legend .status-low::before { color: var(--heatmap-low); }
+.legend .status-critical::before { color: var(--heatmap-critical); }

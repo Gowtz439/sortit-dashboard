@@ -1,0 +1,152 @@
+/* src/components/BasicStatus/BasicStatus.css */
+/* Overriding default bento-box for the top bar */
+.bento-box.basic-status {
+    padding: 15px 30px; /* Adjust padding to match image */
+    background-color: #1a1a2e; /* Darker background */
+    border: none; /* No border for top bar */
+    border-radius: 0; /* Sharp corners for top bar */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Strong shadow */
+    
+    /* Layout properties are moved from DashboardLayout.css for this component */
+    grid-column: 1 / -1; /* Spans full width */
+    height: 120px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: none; /* No hover effect for this persistent top bar */
+}
+.bento-box.basic-status:hover {
+    transform: none; /* No lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Consistent shadow */
+}
+
+
+/* --- Left Section: User Profile --- */
+.user-profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; 
+}
+
+.avatar-wrapper {
+    position: relative;
+    padding: 5px; /* Padding for the inner border/glow */
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--color-accent-green), var(--color-accent-blue)); /* Gradient border */
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.5); /* Glow */
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-bento-bg); /* Inner avatar background */
+    color: var(--color-text-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5em;
+    border: 3px solid var(--color-bento-bg); /* Inner border to match bg */
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.student-id {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+    margin-bottom: 2px;
+}
+
+.level-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 5px;
+}
+
+.level-progress-bar-container {
+    background-color: var(--color-progress-bg);
+    border-radius: 10px;
+    height: 8px;
+    width: 150px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.level-progress-bar-fill {
+    height: 100%;
+    background-color: var(--color-accent-green);
+    border-radius: 10px;
+}
+
+.progress-text {
+    font-size: 0.75em;
+    color: var(--color-text-muted);
+    margin-top: 3px;
+}
+
+/* --- Middle Section: XP and Optimal Solves --- */
+.xp-solves-summary {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0 40px;
+}
+
+.xp-display, .optimal-solves-display {
+    text-align: center;
+}
+.xp-amount {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: var(--color-accent-green);
+    letter-spacing: -1px;
+    line-height: 1;
+}
+.xp-label {
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+    margin-top: 5px;
+}
+
+.solves-amount {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-accent-blue);
+    line-height: 1;
+}
+.solves-label {
+    font-size: 0.8em;
+    color: var(--color-text-muted);
+    margin-top: 5px;
+}
+
+/* --- Right Section: Global Leaderboard Snippet --- */
+.global-leaderboard-snippet {
+    flex: 1;
+    text-align: right;
+}
+
+.leaderboard-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.leaderboard-item-snippet {
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+    margin-bottom: 3px;
+}
+
+.leaderboard-item-snippet.you {
+    color: var(--color-accent-green);
+    font-weight: 600;
+}

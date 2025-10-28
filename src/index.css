@@ -1,13 +1,69 @@
+/* src/index.css */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #12121e; /* Slightly darker base for Bento */
+  color: #e0e0e0; /* Light text for contrast */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Define key colors for the SortIt Bento dark theme */
+:root {
+  --color-bento-bg: #1a1a2e; /* Card background */
+  --color-bento-border: #2c2c4a; /* Card border */
+  --color-accent-green: #00e676; /* Vibrant green */
+  --color-accent-blue: #2196f3; /* Vibrant blue */
+  --color-text-light: #f0f0f0; /* General text color */
+  --color-text-muted: #aaaaaa; /* Muted text */
+  --color-progress-bg: #3a3a5e; /* Progress bar background */
+
+  /* Heatmap colors */
+  --heatmap-high: #00e676; /* Green */
+  --heatmap-medium: #ffc107; /* Yellow */
+  --heatmap-low: #ff8c00; /* Orange */
+  --heatmap-critical: #dc3545; /* Red */
+}
+
+/* --- Generic Bento Box Styles --- */
+.bento-box {
+    background-color: var(--color-bento-bg);
+    border: 1px solid var(--color-bento-border);
+    border-radius: 12px; /* More rounded corners for Bento */
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow for floating effect */
+    transition: all 0.2s ease-in-out;
+    display: flex; /* Ensure inner content can flex */
+    flex-direction: column; /* Default stack content vertically */
+    overflow: hidden; /* Hide overflow for content that's too big */
+}
+
+.bento-box:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+
+.box-title {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--color-text-light);
+}
+
+/* Generic button style */
+.bento-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Rounded buttons */
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+    background-color: var(--color-accent-blue);
+    color: var(--color-text-light);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.bento-button:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift */
 }

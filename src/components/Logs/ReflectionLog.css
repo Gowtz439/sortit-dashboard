@@ -1,0 +1,60 @@
+/* src/components/Logs/ReflectionLog.css */
+.bento-box.reflection-log {
+    /* Specific grid properties for Bento layout */
+    grid-column: span 2; /* Spans 2 columns */
+    /* grid-row: span 1; */ /* Let it auto-flow or set explicitly */
+}
+
+.log-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 250px; /* Adjust max height if needed */
+    padding-right: 5px;
+}
+/* Custom scrollbar for dark theme */
+.log-list::-webkit-scrollbar { width: 8px; }
+.log-list::-webkit-scrollbar-track { background: var(--color-bento-bg); border-radius: 10px; }
+.log-list::-webkit-scrollbar-thumb { background: var(--color-bento-border); border-radius: 10px; }
+.log-list::-webkit-scrollbar-thumb:hover { background: #555; }
+
+
+.log-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--color-bento-border);
+}
+.log-item:last-child { border-bottom: none; }
+
+.log-alg { 
+    font-weight: 600; 
+    color: var(--color-accent-blue);
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+.log-details { 
+    font-size: 0.9em; 
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+.iterations { 
+    color: var(--heatmap-critical);
+    font-weight: 700; 
+}
+
+.reflect-button {
+    margin-top: 10px;
+    align-self: flex-end;
+    background-color: var(--color-accent-green); /* Green button */
+}
+.reflect-button:hover {
+    background-color: #00b34d;
+}
+
+.log-count {
+    font-size: 0.9em;
+    color: var(--heatmap-critical);
+    margin-left: 5px;
+    font-weight: 400;
+}
